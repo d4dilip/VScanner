@@ -1,0 +1,17 @@
+<div class="bar bar-header bar-light">
+    <h1 class="title">Scanned Data</h1>
+</div>
+
+<div class="list">
+    <div class="item item-divider">App Code</div>
+    <div class="item">{{scandata.VoithQRCodeData.AppCode}}</div>
+</div>
+<div class="list" ng-repeat="item in scandata.VoithQRCodeData.Data">
+
+    <div class="item item-divider">{{item.Key}}</div>
+
+    <button class="item button button-clear button-positive" ng-click="OpenExtLink('{{item.Content}}')" ng-show="item.Type=='URL'">{{item.Content}} </button>
+    <a class="item" ng-show="item.Type=='TEL'" ng-href="tel: {{item.Content}}">Call {{item.Content}}</a>
+    <a class="item" ng-show="item.Type=='SMS'" ng-href="sms: {{item.Content}}">Call {{item.Content}}</a>
+    <a class="item" ng-show="item.Type!='TEL' && item.Type!='URL' && item.Type!='SMS'" ng-href="#">{{item.Content}} </a>
+</div>

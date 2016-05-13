@@ -1,0 +1,53 @@
+<ion-view>
+    <ion-content>
+
+        <div class="bar title">
+          <div class="title">   Scanned Data</div>
+        </div>
+    
+        <div class="item item-divider">{{scandata.VoithQRCodeData.AppCode}}</div>
+
+        <div class="list" ng-repeat="item in scandata.VoithQRCodeData.Data">
+
+            <div class="item item-divider">{{item.Key}}</div>
+
+            <button class="item button button-clear button-positive" ng-click="OpenExtLink('{{item.Content}}')" ng-show="item.Type=='URL'">{{item.Content}} </button>
+            <a class="item" ng-show="item.Type=='TEL'" ng-href="tel: {{item.Content}}">Call {{item.Content}}</a>
+            <a class="item" ng-show="item.Type=='SMS'" ng-href="sms: {{item.Content}}">SMS {{item.Content}}</a>
+            <a class="item" ng-show="item.Type!='TEL' && item.Type!='URL' && item.Type!='SMS'" ng-href="#">{{item.Content}} </a>
+        </div>
+        <!--<div ng-repeat="item in scandata.VoithQRCodeData.Data">
+            <label class="item item-input item-stacked-label" ng-show="item.Type=='URL'">
+                <span class="input-label item-stacked-label">URL</span>
+                <button class="button button-clear button-positive" ng-click="OpenExtLink('{{item.Content}}')">
+                    {{item.Content}}
+                </button>
+
+            </label>
+            <label class="item item-input item-stacked-label" ng-show="item.Type=='NUMBER'">
+                <span class="input-label">Number</span>
+                <span class="input-label">{{item.Content}}</span>
+            </label>
+            <label class="item item-input item-stacked-label" ng-show="item.Type=='STRING'">
+                <span class="input-label">Info</span>
+                <span class="input-label">{{item.Content}}</span>
+            </label>
+            <label class="item item-input item-stacked-label" ng-show="item.Type=='TEL'">
+                <span class="input-label">Tel.</span>
+                <input class="input-label" type="tel" value="{{item.Content}}" readonly />
+            </label>
+            <label class="item item-input item-stacked-label" ng-show="item.Type=='SMS'">
+                <span class="input-label">SMS</span>
+                <span class="input-label">{{item.Content}}</span>
+            </label>
+
+        </div>-->
+   <div class="bar bar-positive">
+        <div class="title">
+            <div class="title" ng-click="goToScan()"> Scan Again</div>
+
+        </div>
+    </div>
+    </ion-content>
+ 
+</ion-view>
