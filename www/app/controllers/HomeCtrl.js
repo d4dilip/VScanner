@@ -24,6 +24,7 @@
                 function(result) {
                       var dd= JSON.parse(result.text);
                        localStorage.setItem("SCANNDATA",JSON.stringify(dd));
+                       alert(JSON.stringify(dd));
                        $location.path("app/scandata");
                 },
                 function(error) {
