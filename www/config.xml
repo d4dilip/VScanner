@@ -1,8 +1,8 @@
 <widget 
     xmlns="http://www.w3.org/ns/widgets" 
-    xmlns:gap="http://phonegap.com/ns/1.0" id="com.app.VoithBarcodeScanner" version="3.0.0">
-    <name>VScan</name>
-    <description></description>
+    xmlns:gap="http://phonegap.com/ns/1.0" id="com.app.VoithCodeScanner" version="3.0.0">
+    <name>Voith QRCode Scanner</name>
+    <description>A prototype app -VoithCodeScanner</description>
     <author href="http://d4dilip.github.io/profile/" email="royalparinda11@gmail.com">Dilip Singh</author>
     <content src="index.html"/>
     <preference name="permissions" value="none"/>
